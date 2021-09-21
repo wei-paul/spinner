@@ -1,11 +1,8 @@
-setTimeout(() => {
-  let delay = 0;
-  while (delay < 1300) {
-  process.stdout.write('\r|   ');
-  process.stdout.write('\r/   ');
-  process.stdout.write('\r-   ');
-  process.stdout.write('\r\\   ')
-  delay += 50;
-  }
-}, delay);
-
+const spinToWin = "\r|\r/\r-\r\\\r|";
+let delay = 0;
+for (const i of spinToWin) {
+  setTimeout(() => {
+    process.stdout.write(`\r ${i}`);
+  }, delay)
+  delay += 50
+};
